@@ -4,5 +4,6 @@ class Destination < ApplicationRecord
   has_many :tour_guides, through: :appointments
 
   has_many :destination_reviews
+  has_many :tourists, through: :destination_reviews
   has_many :destination_images
 end
