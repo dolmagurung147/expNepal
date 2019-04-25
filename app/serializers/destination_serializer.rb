@@ -2,7 +2,7 @@ class DestinationSerializer < ActiveModel::Serializer
   attributes :id, :name, :location, :difficulty_level, :about, :best_time_to_visit, :reviews, :appointments, :destination_images
 
   def reviews
-    self.object.reviews
+    self.object.destination_reviews
   end
 
   def appointments
@@ -12,5 +12,5 @@ class DestinationSerializer < ActiveModel::Serializer
   def destination_images
     self.object.destination_images
   end
-  
+
 end
