@@ -15,7 +15,7 @@ class DestinationSerializer < ActiveModel::Serializer
 
   def avgrating
     ratings = self.object.destination_reviews.map{|hash| hash[:rating]}
-    ratings.length == 0 ? 0 : ratings.inject{|sum, n| sum + n}
+    ratings.length == 0 ? 0 : (ratings.inject{|sum, n| sum + n})/ratings.length
   end
 
 end
