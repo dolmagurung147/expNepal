@@ -84,20 +84,20 @@ dImage49 = DestinationImage.create(image: "https://lieveroundtheworld.files.word
 dImage50 = DestinationImage.create(image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wcT02JvOKtJFDWdIs9SRaFWWkh6z4w9fSGVXrI_lK9U63ID35g", destination_id: 11)
 
  # All of the Tourists
- t1 = Tourist.create(name: "Elizabeth Kosowski", profile_picture: "", username: "eliz", password_digest: "eliz", short_bio: "Love movies", picture_id: "", age: 28)
- t2 = Tourist.create(name: "Dana Sevcik", profile_picture: "", username: "dana", password_digest: "dana", short_bio: "Love bagel", picture_id: "", age: 23)
- t3 = Tourist.create(name: "Brianna Dixon", profile_picture: "", username: "bri", password_digest: "bri", short_bio: "Love cats and dancing", picture_id: "", age: 26)
- t4 = Tourist.create(name: "Matthew Masiello", profile_picture: "", username: "matt", password_digest: "matt", short_bio: "Love music and dancing", picture_id: "", age: 25)
- t5 = Tourist.create(name: "Kyung Won Park", profile_picture: "", username: "nate", password_digest: "nate", short_bio: "Love dog", picture_id: "", age: 30)
+ t1 = Tourist.create(name: "Elizabeth Kosowski", profile_picture: "", username: "eliz", password_digest: "eliz", short_bio: "Love movies", picture_id: "", date_of_birth: "")
+ t2 = Tourist.create(name: "Dana Sevcik", profile_picture: "", username: "dana", password_digest: "dana", short_bio: "Love bagel", picture_id: "", date_of_birth: "")
+ t3 = Tourist.create(name: "Brianna Dixon", profile_picture: "", username: "bri", password_digest: "bri", short_bio: "Love cats and dancing", picture_id: "", date_of_birth: "")
+ t4 = Tourist.create(name: "Matthew Masiello", profile_picture: "", username: "matt", password_digest: "matt", short_bio: "Love music and dancing", picture_id: "", date_of_birth: "")
+ t5 = Tourist.create(name: "Kyung Won Park", profile_picture: "", username: "nate", password_digest: "nate", short_bio: "Love dog", picture_id: "", date_of_birth: "")
 
 
  # All of the TourGuides
-tg1 = TourGuide.create(name: "Dolma Gurung", profile_picture: "", username: "dol", password_digest: "dol", short_bio: "loves to chat and foooooooood", picture_id: "", age: 24)
-tg2 = TourGuide.create(name: "Binod Gurung", profile_picture: "", username: "binod", password_digest: "binod", short_bio: "loves to watch bollywood movies", picture_id: "", age: 25)
-tg3 = TourGuide.create(name: "Aakankshya Bista", profile_picture: "", username: "aaku", password_digest: "aaku", short_bio: "loves to talk and talk", picture_id: "", age: 24)
-tg4 = TourGuide.create(name: "Ashmina Gautam", profile_picture: "", username: "ashma", password_digest: "ashma", short_bio: "loves to read", picture_id: "", age: 25)
-tg5 = TourGuide.create(name: "Sulav Shakya", profile_picture: "", username: "alchi", password_digest: "alchi", short_bio: "loves to workout", picture_id: "", age: 26)
-tg6 = TourGuide.create(name: "Karma Dolma Gurung", profile_picture: "", username: "kandolma", password_digest: "kandolma", short_bio: "loves to travel", picture_id: "", age: 25)
+tg1 = TourGuide.create(name: "Dolma Gurung", profile_picture: "", username: "dol", password_digest: "dol", short_bio: "loves to chat and foooooooood", picture_id: "", date_of_birth: "")
+tg2 = TourGuide.create(name: "Binod Gurung", profile_picture: "", username: "binod", password_digest: "binod", short_bio: "loves to watch bollywood movies", picture_id: "", date_of_birth: "")
+tg3 = TourGuide.create(name: "Aakankshya Bista", profile_picture: "", username: "aaku", password_digest: "aaku", short_bio: "loves to talk and talk", picture_id: "", date_of_birth: "")
+tg4 = TourGuide.create(name: "Ashmina Gautam", profile_picture: "", username: "ashma", password_digest: "ashma", short_bio: "loves to read", picture_id: "", date_of_birth: "")
+tg5 = TourGuide.create(name: "Sulav Shakya", profile_picture: "", username: "alchi", password_digest: "alchi", short_bio: "loves to workout", picture_id: "", date_of_birth: "")
+tg6 = TourGuide.create(name: "Karma Dolma Gurung", profile_picture: "", username: "kandolma", password_digest: "kandolma", short_bio: "loves to travel", picture_id: "", date_of_birth: "")
 
 
 # All of the appointments
