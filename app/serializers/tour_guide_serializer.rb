@@ -1,5 +1,5 @@
 class TourGuideSerializer < ActiveModel::Serializer
-  attributes :id, :name, :profile_picture, :short_bio, :age, :tourist_reviews, :appointments, :username, :password
+  attributes :id, :name, :profile_picture, :short_bio, :date_of_birth, :tourist_reviews, :appointments, :username
 
   def tourist_reviews
     self.object.tourist_reviews

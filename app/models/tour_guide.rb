@@ -12,6 +12,9 @@ class TourGuide < ApplicationRecord
   before_destroy :destroy_tourist_reviews
   before_destroy :destroy_tour_guide_reviews
 
+  has_secure_password #for auth
+  validates :username, uniqueness: { case_sensitive: false }
+
   def destroy_appointments
     self.appointments.destroy_all
   end

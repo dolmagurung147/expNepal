@@ -12,7 +12,11 @@ class TouristsController < ApplicationController
 
   def create
     @tourist = Tourist.create(tourist_params)
-    render json: @tourist
+    if @tourist.valid?
+      render json: { tourist: TouristSerializer.new(@tourist) }, status: :created
+    else
+      render json: { error: 'failed to create tourist' }, status: :not_acceptable
+    end
   end
 
   def update
