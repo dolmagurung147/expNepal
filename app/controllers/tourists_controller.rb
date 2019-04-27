@@ -13,9 +13,10 @@ class TouristsController < ApplicationController
   def create
     @tourist = Tourist.create(tourist_params)
     if @tourist.valid?
-      render json: { tourist: TouristSerializer.new(@tourist) }, status: :created
+      token = encode_token({tourist_id: @tourist.id})
+      render json: { tourist: TouristSerializer.new(@tourist), token: token }, status: :created
     else
-      render json: { error: 'failed to create tourist' }, status: :not_acceptable
+      render json: { error: 'Fill Out the correct information' }, status: :not_acceptable
     end
   end
 
@@ -34,7 +35,7 @@ class TouristsController < ApplicationController
   private
 
   def tourist_params
-    params.require(:tourist).permit(:name, :profile_picture, :username, :password, :short_bio, :picture_id, :age)
+    params.require(:tourist).permit(:name, :profile_picture, :username, :password, :short_bio, :picture_id, :date_of_birth)
   end
 
 end

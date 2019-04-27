@@ -13,7 +13,7 @@ class TourGuidesController < ApplicationController
         token = encode_token({tour_guide_id: @tour_guide.id})
         render json: { tour_guide: TourGuideSerializer.new(@tour_guide), token: token }, status: :created
       else
-        render json: { error: 'failed to create tour_guide' }, status: :not_acceptable
+        render json: { error: 'Fill Out the correct information' }, status: :not_acceptable
       end
     end
 
