@@ -1,5 +1,7 @@
 class TouristsController < ApplicationController
 
+  # skip_before_action :authorized, only: [:create]
+
   def index
     @tourists = Tourist.all
     render json: @tourists

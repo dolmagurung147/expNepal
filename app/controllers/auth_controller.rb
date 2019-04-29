@@ -17,23 +17,23 @@ class AuthController < ApplicationController
   def login # get'
     # check headers for token
     token = request.headers['Authorization']
-    # userType = request.headers['user']
-    # if userType == "tourist"
+    userType = request.headers['user']
+    if userType == "tourist"
       id = JWT.decode(token, ENV['SECRET_KEY'])[0]["tourist_id"]
       @user = Tourist.find(id)
       if @user
-        render json: {user: TouristSerializer.new(curr_user)}
+        render json: {user: TouristSerializer.new(@user)}
       else
         render json: {errors: 'Something went wrong'}
       end
-    # else
-    #   id = JWT.decode(token, ENV['SECRET_KEY'])[0]["tour_guide_id"]
-    #   @user = TouGuide.find(id)
-    #   if @user
-    #     render json: {user: TourGuideSerializer.new(curr_user)}
-    #   else
-    #     render json: {errors: 'Something went wrong'}
-    #   end
-    # end
+    else
+      id = JWT.decode(token, ENV['SECRET_KEY'])[0]["tour_guide_id"]
+      @user = TourGuide.find(id)
+      if @user
+        render json: {user: TourGuideSerializer.new(@user)}
+      else
+        render json: {errors: 'Something went wrong'}
+      end
+    end
   end
 end

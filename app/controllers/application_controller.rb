@@ -8,12 +8,12 @@ class ApplicationController < ActionController::API
 
     def auth_header
       # { Authorization: 'Bearer <token>' }
-      request.headers['Authorization']
+      request.headers['authorization']
     end
 
     def decoded_token
       if auth_header
-        token = auth_header.split(' ')[1]
+        token = auth_header
         # header: { 'Authorization': 'Bearer <token>' }
         begin
           JWT.decode(token, ENV['SECRET_KEY'])
@@ -26,11 +26,11 @@ class ApplicationController < ActionController::API
     def current_user
       if decoded_token
         if decoded_token[0]['tour_guide_id']
-          tour_guide_id = (decoded_token[0]['tour_guide_id']).to_i
+          tour_guide_id = (decoded_token[0]['tour_guide_id'])
           @tour_guide = TourGuide.find_by(id: tour_guide_id)
         elsif decoded_token[0]['tourist_id']
-          tourist_id = (decoded_token[0]['tourist_id']).to_i
-          @tourist = TourGuide.find_by(id: tourist_id)
+          tourist_id = (decoded_token[0]['tourist_id'])
+          @tourist = Tourist.find_by(id: tourist_id)
         end
       end
     end
