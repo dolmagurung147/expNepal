@@ -1,20 +1,20 @@
 class ApplicationController < ActionController::API
 
-  # before_action :authorized
-
     def encode_token(payload)
-      JWT.encode(payload, ENV['SECRET_KEY'])
+      JWT.encode({user_id: payload}, ENV['SECRET_KEY'])
     end
 
     def auth_header
-      # { Authorization: 'Bearer <token>' }
       request.headers['authorization']
+    end
+
+    def userType
+      request.headers['user']
     end
 
     def decoded_token
       if auth_header
         token = auth_header
-        # header: { 'Authorization': 'Bearer <token>' }
         begin
           JWT.decode(token, ENV['SECRET_KEY'])
         rescue JWT::DecodeError
@@ -25,12 +25,13 @@ class ApplicationController < ActionController::API
 
     def current_user
       if decoded_token
-        if decoded_token[0]['tour_guide_id']
-          tour_guide_id = (decoded_token[0]['tour_guide_id'])
-          @tour_guide = TourGuide.find_by(id: tour_guide_id)
-        elsif decoded_token[0]['tourist_id']
-          tourist_id = (decoded_token[0]['tourist_id'])
-          @tourist = Tourist.find_by(id: tourist_id)
+        user = userType
+        if userType == 'tour_guide'
+          tour_guide_id = (decoded_token[0]['user_id'])
+          @tour_guide = TourGuide.find(tour_guide_id)
+        elsif userType == 'tourist'
+          tourist_id = (decoded_token[0]['user_id'])
+          @tourist = Tourist.find(tourist_id)
         end
       end
     end

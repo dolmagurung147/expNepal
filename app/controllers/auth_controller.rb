@@ -8,18 +8,22 @@ class AuthController < ApplicationController
       user = TourGuide.find_by(username: params[:user][:username])
     end
     if user && user.authenticate(params[:user][:password])
-      render json: {user: UserSerializer.new(user), token: encode_token(user.id)}
+      if params[:user][:type] == 'tourist'
+        render json: {user: TouristSerializer.new(user), token: encode_token(user.id)}
+      else
+        render json: {user: TourGuideSerializer.new(user), token: encode_token(user.id)}
+      end
     else
       render json: {errors: 'Please enter the correct username or password'}
     end
   end
 
   def login # get'
-    # check headers for token
-    token = request.headers['Authorization']
+    token = request.headers['authorization']
     userType = request.headers['user']
     if userType == "tourist"
-      id = JWT.decode(token, ENV['SECRET_KEY'])[0]["tourist_id"]
+      # byebug
+      id = JWT.decode(token, ENV['SECRET_KEY'])[0]["user_id"]
       @user = Tourist.find(id)
       if @user
         render json: {user: TouristSerializer.new(@user)}
@@ -27,7 +31,7 @@ class AuthController < ApplicationController
         render json: {errors: 'Something went wrong'}
       end
     else
-      id = JWT.decode(token, ENV['SECRET_KEY'])[0]["tour_guide_id"]
+      id = JWT.decode(token, ENV['SECRET_KEY'])[0]["user_id"]
       @user = TourGuide.find(id)
       if @user
         render json: {user: TourGuideSerializer.new(@user)}
