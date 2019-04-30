@@ -1,5 +1,7 @@
 class AppointmentsController < ApplicationController
 
+  # before_action :authorized
+
   def index
     @appointments = Appointment.all
     render json: @appointments
