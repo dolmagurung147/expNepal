@@ -22,7 +22,6 @@ class AuthController < ApplicationController
     token = request.headers['authorization']
     userType = request.headers['user']
     if userType == "tourist"
-      # byebug
       id = JWT.decode(token, ENV['SECRET_KEY'])[0]["user_id"]
       @user = Tourist.find(id)
       if @user
