@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # login
       post '/login', to: 'auth#create'
       get '/login', to: 'auth#login'
+      post '/destination_reviews', to: 'destination_reviews#create'
+      get '/destination_reviews', to: 'destination_reviews#index'
 
   # get '/topDestinations', to: 'destinations#topDestinations', as: 'topDestinations'
 
