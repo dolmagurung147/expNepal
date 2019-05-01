@@ -1,6 +1,5 @@
 class TouristsController < ApplicationController
 
-
   def index
     @tourists = Tourist.all
     render json: @tourists
@@ -22,7 +21,6 @@ class TouristsController < ApplicationController
   end
 
   def update
-    byebug
     @tourist = Tourist.find(params[:id])
     @tourist.update(tourist_params)
     render json: @tourist
