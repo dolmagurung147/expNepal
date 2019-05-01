@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       get '/login', to: 'auth#login'
       post '/destination_reviews', to: 'destination_reviews#create'
       get '/destination_reviews', to: 'destination_reviews#index'
+      post '/tour_guide_reviews', to: 'tour_guide_reviews#create'
+      get '/tour_guide_reviews', to: 'tour_guide_reviews#index'
 
   # get '/topDestinations', to: 'destinations#topDestinations', as: 'topDestinations'
 
