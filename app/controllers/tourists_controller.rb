@@ -13,7 +13,7 @@ class TouristsController < ApplicationController
   def create
     @tourist = Tourist.create(tourist_params)
     if @tourist.valid?
-      token = encode_token({tourist_id: @tourist.id})
+      token = encode_token(@tourist.id)
       render json: { tourist: TouristSerializer.new(@tourist), token: token }, status: :created
     else
       render json: { error: 'Fill Out the correct information' }, status: :not_acceptable

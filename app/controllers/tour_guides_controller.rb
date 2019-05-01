@@ -10,7 +10,7 @@ class TourGuidesController < ApplicationController
     def create
       @tour_guide = TourGuide.create(tour_guide_params)
       if @tour_guide.valid?
-        token = encode_token({tour_guide_id: @tour_guide.id})
+        token = encode_token(@tour_guide.id)
         render json: { tour_guide: TourGuideSerializer.new(@tour_guide), token: token }, status: :created
       else
         render json: { error: 'Fill Out the correct information' }, status: :not_acceptable
