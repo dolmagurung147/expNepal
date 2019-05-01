@@ -1,7 +1,5 @@
 class TouristsController < ApplicationController
 
-  before_action :authorized
-  skip_before_action :authorized, only: [:create]
 
   def index
     @tourists = Tourist.all
@@ -24,6 +22,7 @@ class TouristsController < ApplicationController
   end
 
   def update
+    byebug
     @tourist = Tourist.find(params[:id])
     @tourist.update(tourist_params)
     render json: @tourist
