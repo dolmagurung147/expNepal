@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_155427) do
     t.string "best_time_to_visit"
   end
 
+# review from tour guides to tourists
   create_table "tour_guide_reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "touristReview"
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_155427) do
     t.index ["tourist_id"], name: "index_tourist_images_on_tourist_id"
   end
 
+# Reviews from tourist to tour guides
   create_table "tourist_reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "tourguide_review"
