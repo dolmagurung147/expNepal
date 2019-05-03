@@ -1,6 +1,5 @@
 class RequestForAppointmentsController < ApplicationController
 
-  before_action :authorized
 
   def index
     @requests = RequestForAppointment.all
