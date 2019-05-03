@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_26_155427) do
+ActiveRecord::Schema.define(version: 2019_05_03_143629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,17 @@ ActiveRecord::Schema.define(version: 2019_04_26_155427) do
     t.string "best_time_to_visit"
   end
 
-# review from tour guides to tourists
+  create_table "request_for_appointments", force: :cascade do |t|
+    t.bigint "tourist_id"
+    t.bigint "tour_guide_id"
+    t.bigint "destination_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["destination_id"], name: "index_request_for_appointments_on_destination_id"
+    t.index ["tour_guide_id"], name: "index_request_for_appointments_on_tour_guide_id"
+    t.index ["tourist_id"], name: "index_request_for_appointments_on_tourist_id"
+  end
+
   create_table "tour_guide_reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "touristReview"
@@ -88,7 +98,6 @@ ActiveRecord::Schema.define(version: 2019_04_26_155427) do
     t.index ["tourist_id"], name: "index_tourist_images_on_tourist_id"
   end
 
-# Reviews from tourist to tour guides
   create_table "tourist_reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "tourguide_review"
@@ -118,6 +127,9 @@ ActiveRecord::Schema.define(version: 2019_04_26_155427) do
   add_foreign_key "destination_images", "destinations"
   add_foreign_key "destination_reviews", "destinations"
   add_foreign_key "destination_reviews", "tourists"
+  add_foreign_key "request_for_appointments", "destinations"
+  add_foreign_key "request_for_appointments", "tour_guides"
+  add_foreign_key "request_for_appointments", "tourists"
   add_foreign_key "tour_guide_reviews", "tour_guides"
   add_foreign_key "tour_guide_reviews", "tourists"
   add_foreign_key "tourist_images", "tourists"

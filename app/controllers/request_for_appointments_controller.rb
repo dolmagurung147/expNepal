@@ -1,5 +1,7 @@
 class RequestForAppointmentsController < ApplicationController
 
+  before_action :authorized
+
   def index
     @requests = RequestForAppointment.all
     render json: @requests
@@ -13,6 +15,6 @@ class RequestForAppointmentsController < ApplicationController
   private
 
   def request_params
-    params.require(:requestForAppointment).permit(:destination_id, :tourist_id, :tour_guide_id)
+    params.require(:request_for_appointment).permit(:destination_id, :tourist_id, :tour_guide_id)
   end
 end
