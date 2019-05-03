@@ -1,0 +1,18 @@
+class RequestForAppointmentsController < ApplicationController
+
+  def index
+    @requests = RequestForAppointment.all
+    render json: @requests
+  end
+
+  def create
+    @request = RequestForAppointment.create(request_params)
+    render json: @request
+  end
+
+  private
+
+  def request_params
+    params.require(:requestForAppointment).permit(:destination_id, :tourist_id, :tour_guide_id)
+  end
+end
