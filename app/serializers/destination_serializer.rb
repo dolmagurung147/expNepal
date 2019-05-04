@@ -13,10 +13,6 @@ class DestinationSerializer < ActiveModel::Serializer
     self.object.destination_images
   end
 
-  def avgrating
-    ratings = self.object.destination_reviews.map{|hash| hash[:rating]}
-    ratings.length == 0 ? 0 : (ratings.inject{|sum, n| sum + n}).to_f/ratings.length
-  end
 
   def costForThisDestination
     dl = self.object.difficulty_level

@@ -12,6 +12,15 @@ class Destination < ApplicationRecord
   before_destroy :destroy_destination_reviews
 
 
+  def avgrating
+    ratings = self.destination_reviews.map{|destination_review| destination_review.rating}
+    ratings.length == 0 ? 0 : (ratings.inject{|sum, n| sum + n}).to_f/ratings.length
+  end
+
+  def self.top_destinations
+    self.all.sort_by{|destination| destination.avgrating}.first(5)
+  end
+
   private
 
   def destroy_appointments
