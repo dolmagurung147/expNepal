@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       get '/tour_guide_reviews', to: 'tour_guide_reviews#index'
       post '/tourist_reviews', to: 'tourist_reviews#create'
       get '/tourist_reviews', to: 'tourist_reviews#index'
+      post '/request_for_appointments', to: 'request_for_appointments#create'
+      get '/request_for_appointments', to: 'request_for_appointments#index'
 
       get '/top_destinations', to: 'top_destinations#index'
 

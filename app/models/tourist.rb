@@ -9,6 +9,8 @@ class Tourist < ApplicationRecord
   has_many :tour_guides, through: :tour_guide_reviews
   has_many :tourist_images
 
+  has_many :request_for_appointments
+
   before_destroy :destroy_appointments
   before_destroy :destroy_tourist_images
   before_destroy :destroy_tour_guide_reviews

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
 
+
     def encode_token(payload)
       JWT.encode({user_id: payload}, ENV['SECRET_KEY'])
     end

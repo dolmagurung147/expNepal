@@ -8,6 +8,8 @@ class TourGuide < ApplicationRecord
   has_many :tour_guide_reviews
   has_many :tourists, through: :tour_guide_reviews
 
+  has_many :request_for_appointments
+
   before_destroy :destroy_appointments
   before_destroy :destroy_tourist_reviews
   before_destroy :destroy_tour_guide_reviews

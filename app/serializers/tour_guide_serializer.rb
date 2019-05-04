@@ -1,5 +1,5 @@
 class TourGuideSerializer < ActiveModel::Serializer
-  attributes :id, :name, :profile_picture, :short_bio, :date_of_birth, :tourist_reviews, :appointments, :username, :avgrating
+  attributes :id, :name, :profile_picture, :short_bio, :date_of_birth, :tourist_reviews, :appointments, :username, :avgrating, :request_for_appointments
 
   def tourist_reviews
     self.object.tourist_reviews
@@ -7,6 +7,10 @@ class TourGuideSerializer < ActiveModel::Serializer
 
   def appointments
     self.object.appointments
+  end
+
+  def request_for_appointments
+    self.object.request_for_appointments
   end
 
   def avgrating
