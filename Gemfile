@@ -50,3 +50,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "jwt", "~> 2.1"
 
 gem 'dotenv-rails', :groups => [:development, :test]
+
+# Twilio for sending message
+gem 'twilio-ruby'
