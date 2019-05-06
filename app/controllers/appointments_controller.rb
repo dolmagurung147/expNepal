@@ -9,6 +9,10 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.create(appointment_params)
+    if (!!@appointment)
+      message = 'Your request for appointment has been accepted'
+      TwilioTextMessenger.new(message).call
+    end
     render json: @appointment
   end
 
