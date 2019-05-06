@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get '/tourist_reviews', to: 'tourist_reviews#index'
       post '/request_for_appointments', to: 'request_for_appointments#create'
       get '/request_for_appointments', to: 'request_for_appointments#index'
+      delete '/request_for_appointments/delete_and_send_message/:id', to: 'request_for_appointments#destroy_and_send_message'
       delete '/request_for_appointments/:id', to: 'request_for_appointments#destroy'
 
       get '/top_destinations', to: 'top_destinations#index'

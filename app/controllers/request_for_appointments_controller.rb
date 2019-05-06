@@ -9,8 +9,8 @@ class RequestForAppointmentsController < ApplicationController
   def create
     @request = RequestForAppointment.create(request_params)
     if (!!@request)
-      message = 'You have new request for Appointment'
-      TwilioTextMessenger.new(message).call
+      message1 = 'You have new request for Appointment'
+      TwilioTextMessenger.new(message1).call
     end
     render json: @request
   end
@@ -20,6 +20,17 @@ class RequestForAppointmentsController < ApplicationController
     @request.destroy
     render json: @request
   end
+
+
+  def destroy_and_send_message
+    debugger
+    @request = RequestForAppointment.find(params[:id])
+    @request.destroy
+    message1 = 'Your request for appointment has been cancelled'
+    TwilioTextMessenger.new(message1).call
+    render json: @request
+  end
+
 
   private
 
