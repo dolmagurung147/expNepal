@@ -23,7 +23,6 @@ class RequestForAppointmentsController < ApplicationController
 
 
   def destroy_and_send_message
-    debugger
     @request = RequestForAppointment.find(params[:id])
     @request.destroy
     message1 = 'Your request for appointment has been cancelled'
