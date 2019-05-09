@@ -15,6 +15,7 @@ class Tourist < ApplicationRecord
   before_destroy :destroy_tourist_images
   before_destroy :destroy_tour_guide_reviews
   before_destroy :destroy_tourist_reviews
+  before_destroy :request_for_appointments
 
   has_secure_password #for auth
   validates :username, uniqueness: { case_sensitive: false }
@@ -33,5 +34,9 @@ class Tourist < ApplicationRecord
 
   def destroy_tourist_images
     self.tourist_images.destroy_all
+  end
+
+  def destroy_request_for_appointments
+    self.request_for_appointments.destroy_all
   end
 end
