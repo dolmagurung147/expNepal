@@ -100,11 +100,11 @@ dImage50 = DestinationImage.create(image: "https://images.unsplash.com/photo-152
 #
 
  # All of the Tourists
- t1 = Tourist.create(name: "Elizabeth Kosowski", profile_picture: "", username: "eliz", password: "eliz", short_bio: "Love movies", picture_id: "", date_of_birth: "")
- t2 = Tourist.create(name: "Dana Sevcik", profile_picture: "", username: "dana", password: "dana", short_bio: "Love bagel", picture_id: "", date_of_birth: "")
- t3 = Tourist.create(name: "Brianna Dixon", profile_picture: "", username: "bri", password: "bri", short_bio: "Love cats and dancing", picture_id: "", date_of_birth: "")
- t4 = Tourist.create(name: "Matthew Masiello", profile_picture: "", username: "matt", password: "matt", short_bio: "Love music and dancing", picture_id: "", date_of_birth: "")
- t5 = Tourist.create(name: "Kyung Won Park", profile_picture: "", username: "nate", password: "nate", short_bio: "Love dog", picture_id: "", date_of_birth: "")
+ t1 = Tourist.create(name: "Elizabeth Kosowski", profile_picture: "../images/Elizabeth.png", username: "eliz", password: "eliz", short_bio: "Love movies", picture_id: "", date_of_birth: "")
+ t2 = Tourist.create(name: "Dana Sevcik", profile_picture: "../images/Dana.png", username: "dana", password: "dana", short_bio: "Love bagel", picture_id: "", date_of_birth: "")
+ t3 = Tourist.create(name: "Brianna Dixon", profile_picture: "../images/Brianna.png", username: "bri", password: "bri", short_bio: "Love cats and dancing", picture_id: "", date_of_birth: "")
+ t4 = Tourist.create(name: "Matthew Masiello", profile_picture: "../images/Matt.png", username: "matt", password: "matt", short_bio: "Love music and dancing", picture_id: "", date_of_birth: "")
+ t5 = Tourist.create(name: "Kyung Won Park", profile_picture: "../images/Nate.png", username: "nate", password: "nate", short_bio: "Love dog", picture_id: "", date_of_birth: "")
 
 
  # All of the TourGuides

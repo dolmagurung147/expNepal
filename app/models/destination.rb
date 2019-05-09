@@ -18,7 +18,7 @@ class Destination < ApplicationRecord
   end
 
   def self.top_destinations
-    self.all.sort_by{|destination| destination.avgrating}.first(5)
+    self.all.sort_by{|destination| destination.avgrating}.reverse.first(5)
   end
 
   private
