@@ -1,24 +1,17 @@
-# README
+# Explore Nepal!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Explore Nepal is a website for Tourist and Tour Guides. Tourist and view destinations and send request to tour guides for that destination. Tour Guides can accept or deny that request. If tour guide accepts request, appointment is created between tourist and tour guide.
 
-Things you may want to cover:
+## Languages
 
-* Ruby version
+  * Ruby
+      version 2.3.3
 
-* System dependencies
+  * Rails
+      version 5.2.3
 
-* Configuration
+  * JSONWebToken node package
 
-* Database creation
+  * Twilio
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  * Postgresql
