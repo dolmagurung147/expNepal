@@ -15,3 +15,17 @@ Explore Nepal is a website for Tourist and Tour Guides. Tourist and view destina
   * Twilio
 
   * Postgresql
+
+## Features/App Description
+  * Tourists
+    - Can view all the destinations
+    - Can see the list of tour guides available for that destination
+    - Send request for appointment to the tour guide
+    - Full authentication and authorization
+    - Edit or delete appointments
+    - Edit their profile
+    - Rate destination that they have already visited
+    - Rate tour guide that have already worked with logged-in Tourist
+
+  * Tour guide
+    -
