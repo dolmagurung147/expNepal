@@ -28,4 +28,8 @@ Explore Nepal is a website for Tourist and Tour Guides. Tourist and view destina
     - Rate tour guide that have already worked with logged-in Tourist
 
   * Tour guide
-    -
+    - Full authentication and authorization
+    - Can accept or deny the request
+    - Edit or delete appointment
+    - Can rate tourist that this tour guide have already guided
+    - Edit their profile
